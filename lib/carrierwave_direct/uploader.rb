@@ -37,7 +37,7 @@ module CarrierWaveDirect
 
     def key=(k)
       @key = k
-      update_version_keys(:with => @key)
+      # update_version_keys(:with => @key)
     end
 
     def key
@@ -45,7 +45,7 @@ module CarrierWaveDirect
       if present?
         self.key = URI.parse(URI.encode(url)).path[1 .. -1] # explicitly set key
       else
-        @key = "#{store_dir}/#{guid}/#{FILENAME_WILDCARD}"
+        @key = "#{store_dir}/#{FILENAME_WILDCARD}"
       end
       @key
     end
@@ -147,8 +147,9 @@ module CarrierWaveDirect
     # Put the version name at the end of the filename since the guid is also stored
     # e.g. guid/filename_thumb.jpg instead of CarrierWave's default: thumb_guid/filename.jpg
     def full_filename(for_file)
-      extname = File.extname(for_file)
-      [for_file.chomp(extname), version_name].compact.join('_') << extname
+      # extname = File.extname(for_file)
+      # [for_file.chomp(extname), version_name].compact.join('_') << extname
+      for_file
     end
   end
 end
