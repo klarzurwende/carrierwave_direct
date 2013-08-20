@@ -100,20 +100,20 @@ module CarrierWaveDirect
       false
     end
 
-    def filename
-      unless has_key?
-        # Use the attached models remote url to generate a new key otherwise return nil
-        remote_url = model.send("remote_#{mounted_as}_url")
-        remote_url ? key_from_file(CarrierWave::SanitizedFile.new(remote_url).filename) : return
-      end
+    # def filename
+    #   unless has_key?
+    #     # Use the attached models remote url to generate a new key otherwise return nil
+    #     remote_url = model.send("remote_#{mounted_as}_url")
+    #     remote_url ? key_from_file(CarrierWave::SanitizedFile.new(remote_url).filename) : return
+    #   end
 
-      key_path = key.split("/")
-      filename_parts = []
-      filename_parts.unshift(key_path.pop)
-      unique_key = key_path.pop
-      filename_parts.unshift(unique_key) if unique_key
-      filename_parts.join("/")
-    end
+    #   key_path = key.split("/")
+    #   filename_parts = []
+    #   filename_parts.unshift(key_path.pop)
+    #   unique_key = key_path.pop
+    #   filename_parts.unshift(unique_key) if unique_key
+    #   filename_parts.join("/")
+    # end
 
     def key_regexp
       /\A#{store_dir}\/[a-f\d\-]+\/.+\.(?i)#{extension_regexp}(?-i)\z/
