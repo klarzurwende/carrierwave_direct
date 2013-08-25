@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 require "carrierwave_direct/version"
 
 Gem::Specification.new do |s|
-  s.name        = "carrierwave_direct"
+  s.name        = "carrierwave_direct_kzw"
   s.version     = CarrierwaveDirect::VERSION
-  s.authors     = ["David Wilkie"]
-  s.email       = ["dwilkie@gmail.com"]
-  s.homepage    = "https://github.com/dwilkie/carrierwave_direct"
-  s.summary     = %q{Upload direct to S3 using CarrierWave}
+  s.authors     = ["octimizer"]
+  s.email       = ["octimizer@gmail.com"]
+  s.homepage    = "https://github.com/klarzurwende/carrierwave_direct"
+  s.summary     = %q{Upload direct to S3 using CarrierWave while preserving CarrierWave paths and filenames - a fork of CarrierwaveDirect}
   s.description = %q{Process your uploads in the background by uploading directly to S3}
   s.required_ruby_version = ">= 1.9.0"
 
